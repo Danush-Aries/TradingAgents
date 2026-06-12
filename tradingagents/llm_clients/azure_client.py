@@ -34,8 +34,6 @@ class AzureOpenAIClient(BaseLLMClient):
 
     def get_llm(self) -> Any:
         """Return configured AzureChatOpenAI instance."""
-        self.warn_if_unknown_model()
-
         llm_kwargs = {
             "model": self.model,
             "azure_deployment": os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME", self.model),

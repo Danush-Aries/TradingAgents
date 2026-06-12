@@ -1,1 +1,28 @@
-.
+# Install project and all dependencies via:
+#   pip install .
+# or, for development:
+#   pip install -e .
+#
+# The canonical dependency list lives in pyproject.toml.
+# This file exists only for tooling compatibility (e.g. pip install -r requirements.txt).
+langchain-core>=0.3.81
+langchain-anthropic>=0.3.15
+langchain-experimental>=0.3.4
+langchain-google-genai>=4.0.0
+langchain-openai>=0.3.23
+langgraph>=0.4.8
+langgraph-checkpoint-sqlite>=2.0.0
+pandas>=2.3.0
+parsel>=1.10.0
+pytz>=2025.2
+questionary>=2.1.0
+requests>=2.32.4
+rich>=14.0.0
+typer>=0.21.0
+setuptools>=80.9.0
+stockstats>=0.6.5
+tqdm>=4.67.1
+typing-extensions>=4.14.0
+yfinance>=0.2.63
+python-dotenv>=1.0.0
+backtrader>=1.9.78.123

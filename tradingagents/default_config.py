@@ -12,9 +12,17 @@ DEFAULT_CONFIG = {
     # Pending entries are never pruned. None disables rotation entirely.
     "memory_log_max_entries": None,
     # LLM settings
+    # Default to GPT-4.1 which is a confirmed, production-ready OpenAI model.
+    # Change to any supported provider model listed in tradingagents/llm_clients/model_catalog.py.
+    # Examples by provider:
+    #   openai:    "gpt-4.1", "gpt-4.1-mini", "gpt-4o", "gpt-4o-mini"
+    #   anthropic: "claude-sonnet-4-6", "claude-haiku-4-5", "claude-opus-4-5"
+    #   google:    "gemini-2.5-flash", "gemini-2.5-pro"
+    #   xai:       "grok-3-fast", "grok-3"
+    #   deepseek:  "deepseek-chat", "deepseek-reasoner"
     "llm_provider": "openai",
-    "deep_think_llm": "gpt-5.4",
-    "quick_think_llm": "gpt-5.4-mini",
+    "deep_think_llm": "gpt-4.1",
+    "quick_think_llm": "gpt-4.1-mini",
     # When None, each provider's client falls back to its own default endpoint
     # (api.openai.com for OpenAI, generativelanguage.googleapis.com for Gemini, ...).
     # The CLI overrides this per provider when the user picks one. Keeping a

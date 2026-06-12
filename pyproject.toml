@@ -19,9 +19,9 @@ dependencies = [
     "langgraph-checkpoint-sqlite>=2.0.0",
     "pandas>=2.3.0",
     "parsel>=1.10.0",
+    "python-dotenv>=1.0.0",
     "pytz>=2025.2",
     "questionary>=2.1.0",
-    "redis>=6.2.0",
     "requests>=2.32.4",
     "rich>=14.0.0",
     "typer>=0.21.0",
@@ -31,6 +31,12 @@ dependencies = [
     "typing-extensions>=4.14.0",
     "yfinance>=0.2.63",
 ]
+
+[project.optional-dependencies]
+# Alpha Vantage data vendor support (optional — yfinance works without API keys)
+alpha-vantage = []
+# Redis-backed checkpointing (experimental)
+redis = ["redis>=6.2.0"]
 
 [project.scripts]
 tradingagents = "cli.main:app"

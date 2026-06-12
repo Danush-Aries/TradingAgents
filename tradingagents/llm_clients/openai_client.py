@@ -72,7 +72,6 @@ class OpenAIClient(BaseLLMClient):
 
     def get_llm(self) -> Any:
         """Return configured ChatOpenAI instance."""
-        self.warn_if_unknown_model()
         llm_kwargs = {"model": self.model}
 
         # Provider-specific base URL and auth

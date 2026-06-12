@@ -8,9 +8,12 @@ load_dotenv()
 
 # Create a custom config
 config = DEFAULT_CONFIG.copy()
-config["deep_think_llm"] = "gpt-5.4-mini"  # Use a different model
-config["quick_think_llm"] = "gpt-5.4-mini"  # Use a different model
-config["max_debate_rounds"] = 1  # Increase debate rounds
+# Use confirmed, production-available OpenAI models.
+# Change llm_provider and model names to use a different provider.
+config["llm_provider"] = "openai"
+config["deep_think_llm"] = "gpt-4.1"
+config["quick_think_llm"] = "gpt-4.1-mini"
+config["max_debate_rounds"] = 1  # Number of bull/bear debate rounds
 
 # Configure data vendors (default uses yfinance, no extra API keys needed)
 config["data_vendors"] = {
@@ -23,9 +26,9 @@ config["data_vendors"] = {
 # Initialize with custom config
 ta = TradingAgentsGraph(debug=True, config=config)
 
-# forward propagate
+# Run analysis for a ticker on a specific date
 _, decision = ta.propagate("NVDA", "2024-05-10")
 print(decision)
 
-# Memorize mistakes and reflect
-# ta.reflect_and_remember(1000) # parameter is the position returns
+# Optional: reflect on outcomes to build trading memory
+# ta.reflect_and_remember(1000)  # parameter is the position returns in dollars
